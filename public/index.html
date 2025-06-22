@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Nightlife Coordination App</title>
+</head>
+<body>
+  <h1>Find Bars in Your City</h1>
+
+  <form action="/search" method="GET">
+    <input type="text" name="city" placeholder="Enter city" required>
+    <button type="submit">Search</button>
+  </form>
+
+  <h2>Login</h2>
+  <form action="/login" method="POST">
+    <input name="username" placeholder="Username" required>
+    <button>Login</button>
+  </form>
+
+  <form action="/logout" method="POST">
+    <button>Logout</button>
+  </form>
+</body>
+</html>

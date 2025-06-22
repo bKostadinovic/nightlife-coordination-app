@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head><title>Bars</title></head>
+<body>
+  <h1>Bars in Your Area</h1>
+
+  <ul>
+    <% bars.forEach(bar => { %>
+      <li>
+        <%= bar.name %> - Going: <%= (attendance[bar.id] || []).length %>
+        <% if (user && (attendance[bar.id] || []).includes(user)) { %>
+          <form action="/notgoing/<%= bar.id %>" method="POST" style="display:inline;">
+            <button>Not Going</button>
+          </form>
+        <% } else if (user) { %>
+          <form action="/going/<%= bar.id %>" method="POST" style="display:inline;">
+            <button>I'm Going</button>
+          </form>
+        <% } %>
+      </li>
+    <% }) %>
+  </ul>
+
+  <a href="/">← Back</a>
+</body>
+</html>
